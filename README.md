@@ -22,7 +22,7 @@ Crie um aplicativo da Web que permita que os funcionários enviem feedback para 
 * Descrever da arquitetura e tecnologias utilizadas
 * API Backend
   * Implementação de pelo menos três chamadas de API;
-  * No Repassa, utilizamos a linguagem Ruby e o framework Rails servidor (com o Postgres para o banco de dados), mas sinta-se livre para usar outra tecnologia se preferir.
+  * No Repassa, utilizamos a linguagem Ruby e o framework Rails no servidor (com o Postgres para o banco de dados), mas sinta-se livre para usar outra tecnologia se preferir.
 * Aplicativo Web (frontend)
   * Implementação de 2-5 páginas da web usando uma estrutura moderna da web (por exemplo, React, Angular ou VueJS) que fala com o lado do servidor;
   * Layout das telas utilizando CSS ou Framework CSS é livre;
