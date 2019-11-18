@@ -1,4 +1,4 @@
-# Desafio desenvolvedor Full Stack Repassa
+# Desafio desenvolvedor Repassa
 
 Essa é um desafio da entrevista de desenvolvedor Full Stack Repassa. Você pode dar "fork" nesse projeto, porém,
 pedidos de "Pull Request" serão ignorados.
