@@ -28,9 +28,9 @@ Crie um aplicativo da Web que permita que os funcionários enviem feedback para 
   * Layout das telas utilizando CSS ou Framework CSS é livre;
   * Isso deve se integrar à sua API, mas é bom usar respostas estáticas para algumas delas.
 * Documente todas as escolhas feitas;
-* Soluções completas não são necessárias, mas o que você enviar precisa ser executado.
 
 ## Como completar este desafio
+* Soluções completas são importantes, mas não obrigatórias, porém, o que você enviar precisa estar 100% funcionando.
 * Crie a aplicação e codifique como definido acima com o melhor do seu conhecimento/habilidades;
 * Coloque comentários no seu código para explicar alguma ação, quando apropriado. Deixe seu código o mais legível possível;
 * *Bonus 1*: Escrever testes, pelo menos da API backend (pelo menos de modelos ou controller se houver);
