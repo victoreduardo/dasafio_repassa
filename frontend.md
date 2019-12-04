@@ -1,4 +1,4 @@
-<h1>Desenvolvedor(a) Front-end | Javascript, Css, Html, React, NodeJS</h1>
+# Desenvolvedor(a) Front-end | Javascript, Css, Html, React, NodeJS</h1>
 
 <h2>Especialidade</h2>
 Front-end
