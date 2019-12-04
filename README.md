@@ -5,29 +5,25 @@ pedidos de "Pull Request" serão ignorados.
 
 ## Requisitos
 
-Crie um aplicativo da Web que permita que os funcionários enviem feedback para a análise de desempenho de cada um.
+Crie um aplicativo da Web que permita que um gerente possa enviar uma avaliação para um funcionário e ele consiga ver como está sua avaliação. O ideal é que um funcionário só possa ver a sua avaliação.
 
 *Soluções parcialmente implementadas são aceitas.* Não é obrigatório enviar a solução completa de todos os requisitos, mas o que for enviado necessáriamente precisa estar funcionando.
 
 ## Ambiente Admin
 * Adicionar/Remover/Atualizar/Ver Empregados
 * Adicionar/Remover/Atualizar/Ver Avaliações de Desempenho
-* Atribuir funcionários para participarem da revisão de desempenho de outro funcionário
 
 ## Ambiente Funcionário
-* Lista de revisões de desempenho que precisam de feedback
-* Enviar feedback
+* Ver as revisões de desempenho que recebeu
 
 ## Escopo do Desafio
-* Descrever da arquitetura e tecnologias utilizadas
 * API Backend
-  * Implementação de pelo menos três chamadas de API;
-  * No Repassa, utilizamos a linguagem Ruby e o framework Rails no servidor (com o Postgres para o banco de dados), mas sinta-se livre para usar outra tecnologia se preferir.
+  * Você pode fazer em NodeJS ou Ruby.
+
 * Aplicativo Web (frontend)
-  * Implementação de 2-5 páginas da web usando uma estrutura moderna da web (por exemplo, React, Angular ou VueJS) que fala com o lado do servidor;
-  * Layout das telas utilizando CSS ou Framework CSS é livre;
-  * Isso deve se integrar à sua API, mas é bom usar respostas estáticas para algumas delas.
-* Documente todas as escolhas feitas;
+  * Implementação do frontend usando uma estrutura moderna da web (por exemplo, React, Angular ou VueJS) que fala com o lado do servidor;
+  * Layout das telas utilizando é livre (dê preferência utilizando webcomponents);
+  * Essa parte deve se interagir com a sua API.
 
 ## Como completar este desafio
 * Soluções completas são importantes, mas não obrigatórias, porém, o que você enviar precisa estar 100% funcionando.
