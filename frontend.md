@@ -1,3 +1,5 @@
+![Repassa](https://www.repassa.com.br/assets/logo-cb6efa31d43dd0c712b9765635fe7bdc.svg)
+
 # Desenvolvedor(a) Front-end | Javascript, Css, Html, React, NodeJS
 
 ## Especialidade
