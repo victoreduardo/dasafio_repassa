@@ -1,4 +1,4 @@
-<h1>Desenvolvedor Full-stack Ruby on Rails</h1>
+# Desenvolvedor Full-stack Ruby on Rails
 
 <h2>Especialidade</h2>
 Full-stack
