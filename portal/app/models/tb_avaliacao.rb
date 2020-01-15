@@ -10,7 +10,7 @@ class TbAvaliacao < ActiveRecord::Base
   belongs_to :tb_empregado
   belongs_to :tb_empregado_gerente, class_name: 'TbEmpregado', foreign_key: :tb_empregado_gerente_id
 
-  has_many :tb_respostas
+  has_many :tb_respostas, dependent: :delete_all
   accepts_nested_attributes_for :tb_respostas
 
   # validations ...............................................................
