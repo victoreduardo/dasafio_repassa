@@ -4,3 +4,5 @@ portal/.idea/
 portal/shared/pids/
 
 portal/tmp/pids/
+
+portal/Gemfile.lock
