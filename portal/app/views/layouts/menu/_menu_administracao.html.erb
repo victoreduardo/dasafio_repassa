@@ -1,0 +1,60 @@
+<% if current_user.e_admin? %>
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    <%= breadcrumb('administracao.base') %>
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <a class="nav-link collapsed menu-raiz" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fa fa-fw fa-graduation-cap"></i>
+      <span><%= breadcrumb('administracao.cargos.base') %></span>
+      <span class="fa arrow"></span>
+    </a>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <%= link_to administracao_tb_cargos_path, class: 'collapse-item' do %>
+          <%= breadcrumb('administracao.cargos.cadastro') %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed menu-raiz" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fa fa-fw fa-graduation-cap"></i>
+      <span><%= breadcrumb('administracao.empregados.base') %></span>
+      <span class="fa arrow"></span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <%= link_to administracao_tb_empregados_path, class: 'collapse-item' do %>
+          <%= breadcrumb('administracao.empregados.cadastro') %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed menu-raiz" href="#" data-toggle="collapse" data-target="#collapsePerg" aria-expanded="true" aria-controls="collapsePerg">
+      <i class="fa fa-fw fa-graduation-cap"></i>
+      <span><%= breadcrumb('administracao.avaliacao.base') %></span>
+      <span class="fa arrow"></span>
+    </a>
+    <div id="collapsePerg" class="collapse" aria-labelledby="collapsePerg" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <%= link_to administracao_tb_perguntas_path, class: 'collapse-item' do %>
+          <%= breadcrumb('administracao.avaliacao.perguntas') %>
+        <% end %>
+      </div>
+    </div>
+    <div id="collapsePerg" class="collapse" aria-labelledby="collapsePerg" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <%= link_to administracao_tb_avaliacoes_path, class: 'collapse-item' do %>
+          <%= breadcrumb('administracao.avaliacao.base') %>
+        <% end %>
+      </div>
+    </div>
+  </li>
+<% end %>

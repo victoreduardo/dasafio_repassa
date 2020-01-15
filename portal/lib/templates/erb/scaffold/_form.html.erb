@@ -1,0 +1,33 @@
+<%%= bootstrap_form_for @<%=singular_table_name%>, :id => "<%= plural_name %>_create", :html => {:role => "form"} do |f| %>
+<div class="form-body">
+  <%%= f.alert_message "Por favor corrija os erros abaixo." %>
+  <% attributes.each do |attribute| -%>
+      <% if attribute.type == :references %>
+			<%%= h f.select :<%= attribute.name %>, [].collect { |p| [p.nme_uf, p.id] },
+										 { label: translate_attr(<%= class_name %>, :<%= attribute.name %>),
+											 placeholder: "Digite o #{translate_attr(<%= class_name %>, :<%= attribute.name %>)}" },
+										 { class: 'form-control select2' } %>
+      <% elsif attribute.type == :date %>
+			<%%= date_picker f, :<%= attribute.name %>, label: translate_attr(<%= class_name %>,:<%= attribute.name %>) %>
+      <% elsif attribute.type == :boolean %>
+			<%%= f.check_box :<%= attribute.name %>, label: 'Ativado' %>
+      <% elsif attribute.name == 'created_at' or  attribute.name == 'updated_at'  %>
+      <% else %>
+			<%%= h f.text_field :<%= attribute.name %>, class: 'form-control',
+													label: translate_attr(<%= class_name %>,:<%= attribute.name %>),
+												  placeholder: "Digite o #{translate_attr(<%= class_name %>,:<%= attribute.name %>)}" %>
+      <% end %>
+  <% end -%>
+
+</div>
+
+<div class="form-foot margin-top-10">
+  <div class="form-actions">
+    <%%= link_to "Cancelar", <%= singular_table_name %>s_path  , :class=> "btn btn-default" %>
+	<div class="pull-right">
+		<button type="submit" class="btn btn-success btn-sm">Salvar</button>
+	</div>
+  </div>
+</div>
+
+<%% end %>

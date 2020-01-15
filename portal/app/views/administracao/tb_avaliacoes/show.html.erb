@@ -1,0 +1,52 @@
+<% content_for :title, "Visualizar #{translate_model(TbAvaliacao)}" %>
+
+<div class="card shadow mb-4">
+  <%= component(:panel, :panel_header, title: translate_model(TbAvaliacao)) %>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbAvaliacao, :tb_empregado_id) %>:</b></th>
+
+        <td><%= h @tb_avaliacao.tb_empregado&.nome %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbAvaliacao, :tb_empregado_gerente_id) %>:</b></th>
+
+        <td><%= h @tb_avaliacao.tb_empregado_gerente&.nome %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbAvaliacao, :media) %>:</b></th>
+
+        <td><%= h @tb_avaliacao.media %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbAvaliacao, :dta_finalizacao) %>:</b></th>
+
+        <td><%= h @tb_avaliacao.dta_finalizacao&.to_date&.to_s_br %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbAvaliacao, :status) %>:</b></th>
+
+        <td>
+          <%= translate_enum_name(TbAvaliacao, :statuses, @tb_avaliacao.status) %>
+        </td>
+      </tr>
+      <%= render 'administracao/tb_avaliacoes/perguntas' %>
+      </thead>
+    </table>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= link_to "Voltar", administracao_tb_avaliacoes_path, class: "btn btn-sm btn-default" %>
+        <div class="pull-right">
+          <%= link_to_edit edit_administracao_tb_avaliacao_path(id: @tb_avaliacao), label: 'Alterar' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

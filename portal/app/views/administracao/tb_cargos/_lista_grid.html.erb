@@ -1,0 +1,14 @@
+<% @tb_cargos.each do |tb_cargo| %>
+  <tr>
+
+    <td><%= h tb_cargo.nome %> </td>
+
+    <td><%= h tb_cargo.salario.to_dinheiro %> </td>
+
+    <td align="center" style="white-space: nowrap;">
+      <%= link_to_show administracao_tb_cargo_path(id: tb_cargo) %>
+      <%= link_to_edit edit_administracao_tb_cargo_path(id: tb_cargo) %>
+      <%= link_to_destroy administracao_tb_cargo_path(id: tb_cargo) %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,28 @@
+pt-BR:
+  breadcrumb:
+    dashboard: Dashboard
+    avaliacoes:
+      base: Avaliação
+      plural: Avaliações
+    administracao:
+      base: Administração
+      cargos:
+        base: Cargo
+        plural: Cargos
+        cadastro: Cadastro
+      empregados:
+        base: Empregado
+        plural: Empregados
+        cadastro: Cadastro
+      avaliacao:
+        base: Avaliações
+        perguntas: Perguntas
+    gerente:
+      base: Gerente
+      avaliacao:
+        base: Avaliações
+    usuario:
+      base: Usuário
+      avaliacoes:
+        base: Minhas Avaliações
+        todas: Todas

@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      tb_cargo: 'Cargo'
+    attributes:
+      tb_cargo:
+        nome: 'Nome do Cargo'
+        salario: 'Salário'
+        tb_empregados: 'Empregados'

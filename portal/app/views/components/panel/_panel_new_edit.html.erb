@@ -1,0 +1,9 @@
+<% content_for :title, options[:title] if defined? options %>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6><%= options[:title] if defined? options %></h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form' %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<% @tb_avaliacoes.each do |tb_avaliacao| %>
+  <tr>
+    <td><%= h tb_avaliacao.tb_empregado&.nome %> </td>
+
+    <td><%= h tb_avaliacao.tb_empregado_gerente&.nome %> </td>
+
+    <td><%= translate_enum_name(TbAvaliacao, :statuses, tb_avaliacao.status) %> </td>
+
+    <td><%= h tb_avaliacao.media %> </td>
+
+    <td><%= h tb_avaliacao.dta_finalizacao&.to_date&.to_s_br %></td>
+
+    <td align="center" style="white-space: nowrap;">
+      <%= link_to_show administracao_tb_avaliacao_path(id: tb_avaliacao) %>
+      <%= link_to_edit edit_administracao_tb_avaliacao_path(id: tb_avaliacao) %>
+      <%= link_to_destroy administracao_tb_avaliacao_path(id: tb_avaliacao) %>
+    </td>
+  </tr>
+<% end %>

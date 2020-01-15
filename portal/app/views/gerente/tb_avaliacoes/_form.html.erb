@@ -1,0 +1,50 @@
+<%= bootstrap_nested_form_for @tb_avaliacao,
+                              url: gerente_tb_avaliacao_path,
+                              id: "tb_avaliacoes_create", :html => { :role => "form" } do |f| %>
+  <div class="form-body">
+    <%= f.alert_message "Por favor corrija os erros abaixo." %>
+
+    <%= f.text_field :tb_empregado_id, class: 'select2ajax form-control',
+                     label: human_attr(f.object.class, :tb_empregado_id),
+                     style: 'width: 100%',
+                     readonly: true,
+                     placeholder: "Informe o Nome do #{human_attr(f.object.class, :tb_empregado_id)}",
+                     label_class: 'margin-top-10',
+                     data: { url: autocomplete_administracao_tb_empregados_path(format: :json) } %>
+
+    <%= f.text_field :tb_empregado_gerente_id, class: 'select2ajax form-control',
+                     label: human_attr(f.object.class, :tb_empregado_gerente_id),
+                     style: 'width: 100%',
+                     readonly: true,
+                     placeholder: "Informe o Nome do #{human_attr(f.object.class, :tb_empregado_gerente_id)}",
+                     label_class: 'margin-top-10',
+                     data: { url: autocomplete_administracao_tb_empregados_path(format: :json), 'param-name': :chave, 'param-value': :gerente } %>
+
+    <h4 class="form-section">Perguntas</h4>
+    <%= f.fields_for :tb_respostas do |ff| %>
+      <%= ff.hidden_field :id %>
+      <%= ff.hidden_field :tb_pergunta_id %>
+      <div class="col-md-12">
+        <%= ff.object.nme_pergunta %><br/>
+        <small><%= ff.object.descricao_pergunta %></small>
+      </div>
+      <div class="col-md-12">
+        <%= ff.select :nota, options_from_enum_for_select(ff.object, :nota) %>
+      </div>
+      <div class="col-md-12">
+        <%= ff.text_area :obs, rows: 2,
+                         label: translate_attr(TbResposta, :obs) %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="form-foot margin-top-10">
+    <div class="form-actions">
+      <%= link_to "Cancelar", administracao_tb_avaliacoes_path, :class => "btn btn-default" %>
+      <div class="pull-right">
+        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+      </div>
+    </div>
+  </div>
+<% end %>

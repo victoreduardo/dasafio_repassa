@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      tb_avaliacao: 'Avaliações'
+    attributes:
+      tb_avaliacao:
+        tb_empregado_id: 'Empregado'
+        tb_empregado_gerente_id: 'Gerente'
+        media: 'Nota Final'
+        dta_finalizacao: 'Data da Finalização'
+        status: Status
+        statuses:
+          aguardando: Aguardando Avaliação
+          finalizado: Avaliação Finalizada

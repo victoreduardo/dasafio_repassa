@@ -1,0 +1,23 @@
+<tr>
+  <th>Perguntas</th>
+  <td>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Pergunta</th>
+        <th>Nota</th>
+        <th>Observação</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tb_avaliacao.tb_respostas.includes(:tb_pergunta).each do |resposta| %>
+        <tr>
+          <td><%= resposta.tb_pergunta&.nme_pergunta %></td>
+          <td><%= resposta.nota %></td>
+          <td><%= resposta.obs %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </td>
+</tr>

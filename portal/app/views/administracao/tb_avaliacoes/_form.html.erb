@@ -1,0 +1,32 @@
+<%= bootstrap_form_for @tb_avaliacao,
+                       url: @tb_avaliacao.new_record? ?
+                                administracao_tb_avaliacoes_path :
+                                administracao_tb_avaliacao_path,
+                       id: "tb_avaliacoes_create", :html => { :role => "form" } do |f| %>
+  <div class="form-body">
+    <%= f.alert_message "Por favor corrija os erros abaixo." %>
+
+    <%= f.text_field :tb_empregado_id, class: 'select2ajax form-control',
+                     label: human_attr(f.object.class, :tb_empregado_id),
+                     style: 'width: 100%',
+                     placeholder: "Informe o Nome do #{human_attr(f.object.class, :tb_empregado_id)}",
+                     label_class: 'margin-top-10',
+                     data: { url: autocomplete_administracao_tb_empregados_path(format: :json) } %>
+
+    <%= f.text_field :tb_empregado_gerente_id, class: 'select2ajax form-control',
+                     label: human_attr(f.object.class, :tb_empregado_gerente_id),
+                     style: 'width: 100%',
+                     placeholder: "Informe o Nome do #{human_attr(f.object.class, :tb_empregado_gerente_id)}",
+                     label_class: 'margin-top-10',
+                     data: { url: autocomplete_administracao_tb_empregados_path(format: :json), 'param-name': :chave, 'param-value': :gerente } %>
+  </div>
+
+  <div class="form-foot margin-top-10">
+    <div class="form-actions">
+      <%= link_to "Cancelar", administracao_tb_avaliacoes_path, :class => "btn btn-default" %>
+      <div class="pull-right">
+        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+      </div>
+    </div>
+  </div>
+<% end %>

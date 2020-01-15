@@ -1,0 +1,24 @@
+default: &default
+  adapter:  postgresql
+  encoding: utf8
+  schema:   portal
+  database: postgres
+  port:     5432
+
+development:
+  <<: *default
+  username: postgres
+  host:     127.0.0.1
+  password: '123'
+
+test:
+  <<: *default
+  username: postgres
+  host:     127.0.0.1
+  password: '123'
+
+production:
+  <<: *default
+  username: postgres
+  host:     127.0.0.1
+  password: '123'

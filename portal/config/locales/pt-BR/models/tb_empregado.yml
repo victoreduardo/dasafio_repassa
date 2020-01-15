@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      tb_empregado: 'Empregado'
+    attributes:
+      tb_empregado:
+        nome: 'Nome'
+        nmr_cpf: 'CPF'
+        end_email: 'Email'
+        dta_nascimento: 'Data Nascimento'
+        sexo: 'Sexo'
+        sexos:
+          masculino: 'Masculino'
+          feminino: 'Feminino'
+        dta_admissao: 'Admissão'
+        tb_cargo_id: 'Cargo'

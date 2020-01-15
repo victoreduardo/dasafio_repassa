@@ -1,0 +1,42 @@
+<%% content_for :title, "Visualizar #{translate_model(<%= class_name %>)}" %>
+
+<div class="card shadow mb-4">
+  <%%= component(:panel, :panel_header, title: translate_model(<%= class_name %>)) %>
+  <div class="card-body">
+    <table class="table">
+	  <thead>
+      <% for attribute in attributes -%>
+          <tr>
+            <th width="10%" style="text-align: right;">
+              <b><%%= translate_attr(<%= class_name %>,:<%= attribute.name %>) %>:</b></th>
+            <% if attribute.field_type == :select or attribute.field_type == "select" %>
+                <td><%%=h @<%= singular_table_name %>.<%= attribute.name %>.id if @<%= singular_table_name %>
+                  .<%= attribute.name %> %>
+                </td>
+            <% elsif attribute.type == :date or attribute.type == :datetime %>
+                <td><%%=h converte_<%= attribute.type %>(@<%= singular_table_name %>.<%= attribute.name %>) %></td>
+            <% elsif attribute.field_type == :check_box or attribute.field_type == "check_box" %>
+                <td><%%=h ativo_inativo(@<%= singular_table_name %>.<%= attribute.name %>) %></td>
+            <% elsif attribute.type == :decimal and attribute.name.include? "vl" %>
+                <td align="right" style="white-space: nowrap;"><%%=h Dinheiro.new(@<%= singular_table_name %>
+                  .<%= attribute.name %>.to_f).real_formatado %>
+                </td>
+            <% elsif attribute.name == 'mes' %>
+                <td><%%=h numero_mes(@<%= singular_table_name %>.<%= attribute.name %>) %></td>
+            <% else %>
+                <td><%%=h @<%= singular_table_name %>.<%= attribute.name %> %></td>
+            <% end -%>
+          </tr>
+      <% end -%>
+	  </thead>
+    </table>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%%= link_to "Voltar", :back, class: "btn btn-sm btn-default" %>
+        <div class="pull-right">
+        <%%= link_to_edit edit_<%= singular_table_name %>_path(:id => @<%= singular_table_name %>), label: 'Alterar' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

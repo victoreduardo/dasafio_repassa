@@ -1,0 +1,27 @@
+<%% @<%= singular_name %>s.each do |<%= singular_name %>| %>
+  <tr>
+      <% for attribute in attributes -%>
+          <% if attribute.field_type == :select or attribute.field_type == "select"  %>
+           <td><%%=h <%= singular_name %>.<%= attribute.name %>.id if <%= singular_name %>.<%= attribute.name %> %></td>
+            <% elsif attribute.name == 'created_at' or attribute.name == 'updated_at'  %>
+
+            <% elsif attribute.type == :date or attribute.type == :datetime %>
+             <td><%%=h converte_<%=attribute.type%>(<%= singular_name %>.<%= attribute.name %>) %></td>
+          <% elsif attribute.field_type == :check_box or attribute.field_type == "check_box"%>
+           <td><%%=h sim_nao(<%= singular_name %>.<%= attribute.name %>) %></td>
+            <% elsif attribute.type == :decimal and attribute.name.include? "vl" %>
+           <td align="right" style="white-space: nowrap;"><%%=h Dinheiro.new(<%= singular_name %>.<%= attribute.name %>.to_f).real_formatado %></td>
+            <% elsif attribute.name == 'mes' %>
+           <td><%%=h numero_mes(<%= singular_name %>.<%= attribute.name %>) %> </td>
+         <% else %>
+           <td><%%=h <%= singular_name %>.<%= attribute.name %> %> </td>
+         <% end %>
+      <% end -%>
+
+      <td align="center"  style="white-space: nowrap;">
+        <%%= link_to_show <%= singular_table_name %>_path(:id => <%= singular_name %>) %>
+        <%%= link_to_edit edit_<%= singular_table_name %>_path(:id => <%= singular_name %>) %>
+        <%%= link_to_destroy <%= singular_table_name %>_path(:id => <%= singular_name %>) %>
+      </td>
+  </tr>
+<%% end %>

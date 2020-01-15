@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      tb_pergunta: 'Pergunta'
+    attributes:
+      tb_pergunta:
+        nme_pergunta: 'Nome da Pergunta'
+        descricao: 'Descrição'
+        peso: 'Peso'

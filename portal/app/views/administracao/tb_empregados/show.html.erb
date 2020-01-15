@@ -1,0 +1,61 @@
+<% content_for :title, "Visualizar #{translate_model(TbEmpregado)}" %>
+
+<div class="card shadow mb-4">
+  <%= component(:panel, :panel_header, title: translate_model(TbEmpregado)) %>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :nome) %>:</b></th>
+
+        <td><%= h @tb_empregado.nome %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :nmr_cpf) %>:</b></th>
+
+        <td><%= h CPF.new(@tb_empregado.nmr_cpf).formatted %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :end_email) %>:</b></th>
+
+        <td><%= h @tb_empregado.end_email %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :dta_nascimento) %>:</b></th>
+
+        <td><%= h @tb_empregado.dta_nascimento.to_date.to_s_br %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :sexo) %>:</b></th>
+
+        <td><%= h @tb_empregado.sexo %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :dta_admissao) %>:</b></th>
+
+        <td><%= h @tb_empregado.dta_admissao.to_date.to_s_br %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbEmpregado, :tb_cargo_id) %>:</b></th>
+
+        <td><%= h @tb_empregado.tb_cargo&.nome %></td>
+      </tr>
+      </thead>
+    </table>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= link_to "Voltar", administracao_tb_empregados_path, class: "btn btn-sm btn-default" %>
+        <div class="pull-right">
+          <%= link_to_edit edit_administracao_tb_empregado_path(id: @tb_empregado), label: 'Alterar' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

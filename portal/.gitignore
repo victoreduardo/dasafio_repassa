@@ -1,0 +1,10 @@
+
+log/
+
+tmp/cache/
+
+.idea/
+
+tmp/pids/
+
+shared/pids/

@@ -1,0 +1,30 @@
+<%= bootstrap_form_for @tb_pergunta,
+                       url: @tb_pergunta.new_record? ?
+                                administracao_tb_perguntas_path :
+                                administracao_tb_pergunta_path,
+                       id: "tb_perguntas_create", :html => { :role => "form" } do |f| %>
+  <div class="form-body">
+    <%= f.alert_message "Por favor corrija os erros abaixo." %>
+
+    <%= h f.text_field :nme_pergunta, class: 'form-control',
+                       label: translate_attr(TbPergunta, :nme_pergunta),
+                       placeholder: "Digite o #{translate_attr(TbPergunta, :nme_pergunta)}" %>
+
+    <%= h f.text_area :descricao, class: 'form-control', rows: 2,
+                       label: translate_attr(TbPergunta, :descricao),
+                       placeholder: "Digite o #{translate_attr(TbPergunta, :descricao)}" %>
+
+    <%= h f.number_field :peso, class: 'form-control',
+                         label: translate_attr(TbPergunta, :peso),
+                         placeholder: "Digite o #{translate_attr(TbPergunta, :peso)}" %>
+  </div>
+
+  <div class="form-foot margin-top-10">
+    <div class="form-actions">
+      <%= link_to "Cancelar", administracao_tb_perguntas_path, :class => "btn btn-default" %>
+      <div class="pull-right">
+        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+      </div>
+    </div>
+  </div>
+<% end %>

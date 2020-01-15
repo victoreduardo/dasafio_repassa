@@ -1,0 +1,17 @@
+<% options ||= {} %>
+<% if options[:label].present? %>
+  <label class="control-label"><%= options[:label] %></label>
+<% end %>
+<div class=" date">
+  <%= form.text_field field,
+                      options.merge(
+                          value: form.object[field].to_s_br,
+                          disable_plugin: true,
+                          class: "form-control date-picker #{options[:class] if options.present?}",
+                          onchange: "#{options[:onchange] if options.present?}",
+                          data: { behaviour: 'datepicker',
+                                  mask: '99/99/9999',
+                                  picker: 'date date-picker' }) do %>
+
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      tb_resposta: 'Respostas'
+    attributes:
+      tb_resposta:
+              tb_avaliacao_id: 'Avaliação'
+              tb_pergunta_id: 'Pergunta'
+              nota: 'Nota'
+              notas:
+                ruim: Ruim
+                medio: Médio
+                bom: Bom
+                otimo: Ótimo
+                perfeito: Perfeito
+              obs: 'Obs'

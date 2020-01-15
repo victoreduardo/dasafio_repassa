@@ -1,0 +1,31 @@
+<% content_for :title, "Visualizar #{translate_model(TbCargo)}" %>
+
+<div class="card shadow mb-4">
+  <%= component(:panel, :panel_header, title: translate_model(TbCargo)) %>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbCargo, :nome) %>:</b></th>
+
+        <td><%= h @tb_cargo.nome %></td>
+      </tr>
+      <tr>
+        <th width="10%" style="text-align: right;">
+          <b><%= translate_attr(TbCargo, :salario) %>:</b></th>
+
+        <td><%= h @tb_cargo.salario.to_dinheiro %></td>
+      </tr>
+      </thead>
+    </table>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= link_to "Voltar", administracao_tb_cargos_path, class: "btn btn-sm btn-default" %>
+        <div class="pull-right">
+          <%= link_to_edit edit_administracao_tb_cargo_path(id: @tb_cargo), label: 'Alterar' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

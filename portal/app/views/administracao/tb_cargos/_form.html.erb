@@ -1,0 +1,28 @@
+<%= bootstrap_form_for @tb_cargo,
+                       url: @tb_cargo.new_record? ?
+                                administracao_tb_cargos_path :
+                                administracao_tb_cargo_path,
+                       id: "tb_cargos_create", :html => { :role => "form" } do |f| %>
+  <div class="form-body">
+    <%= f.alert_message "Por favor corrija os erros abaixo." %>
+
+    <%= h f.text_field :nome, class: 'form-control',
+                       label: translate_attr(TbCargo, :nome),
+                       placeholder: "Digite o #{translate_attr(TbCargo, :nome)}" %>
+
+    <%= h input_dinheiro_precisao f, :salario,
+                                  translate_attr(TbCargo, :salario),
+                                  :valor,
+                                  "Digite o #{translate_attr(TbCargo, :salario)}",
+                                  true, '.', ',', nil, 'col-md-2', 'col-md-10', 2, 'input' %>
+  </div>
+
+  <div class="form-foot margin-top-10">
+    <div class="form-actions">
+      <%= link_to "Cancelar", administracao_tb_cargos_path, :class => "btn btn-default" %>
+      <div class="pull-right">
+        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+      </div>
+    </div>
+  </div>
+<% end %>

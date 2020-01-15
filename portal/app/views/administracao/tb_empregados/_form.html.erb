@@ -1,0 +1,56 @@
+<%= bootstrap_form_for @tb_empregado,
+                       url: @tb_empregado.new_record? ?
+                                administracao_tb_empregados_path :
+                                administracao_tb_empregado_path,
+                       id: "tb_empregados_create", :html => { :role => "form" } do |f| %>
+  <div class="form-body">
+    <%= f.alert_message "Por favor corrija os erros abaixo." %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= h f.text_field :nome, class: 'form-control',
+                           label: translate_attr(TbEmpregado, :nome),
+                           placeholder: "Digite o #{translate_attr(TbEmpregado, :nome)}" %>
+      </div>
+      <div class="col-md-3">
+        <%= h f.text_field :nmr_cpf, class: 'form-control nmr-cpf',
+                           label: translate_attr(TbEmpregado, :nmr_cpf),
+                           placeholder: "Digite o #{translate_attr(TbEmpregado, :nmr_cpf)}" %>
+      </div>
+
+      <div class="col-md-3">
+        <%= h f.text_field :end_email, class: 'form-control', type: :email,
+                           label: translate_attr(TbEmpregado, :end_email),
+                           placeholder: "Digite o #{translate_attr(TbEmpregado, :end_email)}" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= date_picker f, :dta_nascimento %>
+      </div>
+
+      <div class="col-md-3">
+        <%= f.select :sexo, options_from_enum_for_select(f.object, :sexo) %>
+      </div>
+
+      <div class="col-md-3">
+        <%= h f.collection_select :tb_cargo_id, @lista_tb_cargos, :id, :nome,
+                                  { label: "#{translate_attr(TbEmpregado, :tb_cargo_id)}",
+                                    prompt: "Informe o #{translate_attr(TbEmpregado, :tb_cargo_id)} ",
+                                    placeholder: "Informe o #{translate_attr(TbEmpregado, :tb_cargo_id)}" },
+                                  { class: 'form-control select2me', style: 'width: 100%;', required: true } %>
+      </div>
+      <div class="col-md-3">
+        <%= date_picker f, :dta_admissao %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-foot margin-top-10">
+    <div class="form-actions">
+      <%= link_to "Cancelar", administracao_tb_empregados_path, :class => "btn btn-default" %>
+      <div class="pull-right">
+        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+      </div>
+    </div>
+  </div>
+<% end %>

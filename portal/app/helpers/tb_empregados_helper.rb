@@ -1,0 +1,2 @@
+module TbEmpregadosHelper
+end

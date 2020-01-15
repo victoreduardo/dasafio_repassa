@@ -1,0 +1,15 @@
+<% @tb_perguntas.each do |tb_pergunta| %>
+  <tr>
+    <td><%= h tb_pergunta.nme_pergunta %> </td>
+
+    <td><%= h tb_pergunta.descricao %> </td>
+
+    <td><%= h tb_pergunta.peso %> </td>
+
+    <td align="center" style="white-space: nowrap;">
+      <%= link_to_show administracao_tb_pergunta_path(id: tb_pergunta) %>
+      <%= link_to_edit edit_administracao_tb_pergunta_path(id: tb_pergunta) %>
+      <%= link_to_destroy administracao_tb_perguntas_path(id: tb_pergunta) %>
+    </td>
+  </tr>
+<% end %>

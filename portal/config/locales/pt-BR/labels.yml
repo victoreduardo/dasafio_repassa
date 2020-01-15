@@ -1,0 +1,23 @@
+---
+pt-BR:
+  labels:
+    actions: 'Ações '
+    new: 'Novo '
+    newa: 'Nova '
+    edit: 'Alterar '
+    show: 'Visualizar '
+    index: 'Listar '
+    delete: 'Excluir '
+    update: 'Atualizar '
+    create: 'Cadastrar '
+    confirm_delete: 'Deseja realmente excluir o registro?'
+    confirm_cancel: 'Deseja realmente cancelar o registro?'
+    new_project: 'Novo Projeto'
+    edit_project: 'Editar Projeto'
+    portifolio: 'Portifólio'
+    not_loged_in: 'Você não efetuou login'
+    not_authorized: "Você não possui permissão"
+    active: "Ativo"
+    inactive: "Inativo"
+    placeholder_search: "Digite aqui sua pesquisa..."
+    success_update: 'Registro(s) Atualizado(s) com sucesso!'

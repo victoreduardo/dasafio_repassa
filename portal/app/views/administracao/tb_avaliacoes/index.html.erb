@@ -1,0 +1,72 @@
+<% content_for :title, "Listagem de #{pluralize_model(TbAvaliacao)}" %>
+
+<div class="card shadow mb-4">
+  <%= component(:panel, :panel_header, title: 'Filtrar') %>
+  <div class="card-body">
+    <%= search_form_for @q,
+                        url: administracao_tb_avaliacoes_path, html: { role: "form" } do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.label :tb_empregado_id_cont, "#{translate_attr(TbAvaliacao, :tb_empregado_id)}" %>
+          <%= f.text_field :tb_empregado_id_eq, class: 'select2ajax form-control',
+                           label: human_attr(TbAvaliacao, :tb_empregado_id),
+                           style: 'width: 100%',
+                           placeholder: "Informe o Nome do #{human_attr(TbAvaliacao, :tb_empregado_id)}",
+                           label_class: 'margin-top-10',
+                           data: { url: autocomplete_administracao_tb_empregados_path(format: :json) } %>
+        </div>
+
+        <div class="col-md-4">
+          <%= f.label :tb_empregado_gerente_id_cont, "#{translate_attr(TbAvaliacao, :tb_empregado_gerente_id)}" %>
+          <%= f.text_field :tb_empregado_gerente_id_eq, class: 'select2ajax form-control',
+                           label: human_attr(TbAvaliacao, :tb_empregado_id),
+                           style: 'width: 100%',
+                           placeholder: "Informe o Nome do #{human_attr(TbAvaliacao, :tb_empregado_id)}",
+                           label_class: 'margin-top-10',
+                           data: { url: autocomplete_administracao_tb_empregados_path(format: :json) } %>
+        </div>
+
+        <div class="col-md-4">
+          <%= f.label :media_eq, "#{translate_attr(TbAvaliacao, :media)}" %>
+          <%= f.search_field :media_cont, class: "form-control",
+                             placeholder: "Digite o #{translate_attr(TbAvaliacao, :media)}" %>
+        </div>
+
+        <div class="col-md-12 margin-top-10">
+          <div class="pull-right">
+            <%= component "buttons", "pesquisar" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="card shadow mb-4">
+  <%= component(:panel, :panel_header_link, title: pluralize_model(TbAvaliacao), links: [{ label: "Novo", link: new_administracao_tb_avaliacao_path, icone: "fa-plus" }]) %>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover table-responsive table-striped table-bordered data_table" style="margin-top: 6px;">
+        <thead>
+        <tr>
+
+          <th><%= translate_attr(TbAvaliacao, :tb_empregado_id) %></th>
+
+          <th><%= translate_attr(TbAvaliacao, :tb_empregado_gerente_id) %></th>
+
+          <th><%= translate_attr(TbAvaliacao, :status) %></th>
+
+          <th><%= translate_attr(TbAvaliacao, :media) %></th>
+
+          <th><%= translate_attr(TbAvaliacao, :dta_finalizacao) %></th>
+          <th style="width: 1px; text-align: center;">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render 'lista_grid' %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

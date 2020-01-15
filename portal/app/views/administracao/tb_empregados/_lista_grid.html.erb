@@ -1,0 +1,23 @@
+<% @tb_empregados.each do |tb_empregado| %>
+  <tr>
+    <td><%= h tb_empregado.nome %> </td>
+
+    <td><%= h CPF.new(tb_empregado.nmr_cpf).formatted %> </td>
+
+    <td><%= h tb_empregado.end_email %> </td>
+
+    <td><%= h tb_empregado.dta_nascimento.to_date.to_s_br %></td>
+
+    <td><%= h tb_empregado.sexo %> </td>
+
+    <td><%= h tb_empregado.dta_admissao.to_date.to_s_br %></td>
+
+    <td><%= h tb_empregado.tb_cargo&.nome %></td>
+
+    <td align="center" style="white-space: nowrap;">
+      <%= link_to_show administracao_tb_empregado_path(id: tb_empregado) %>
+      <%= link_to_edit edit_administracao_tb_empregado_path(id: tb_empregado) %>
+      <%= link_to_destroy administracao_tb_empregado_path(id: tb_empregado) %>
+    </td>
+  </tr>
+<% end %>

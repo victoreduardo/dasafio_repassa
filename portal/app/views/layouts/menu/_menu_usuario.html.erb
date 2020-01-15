@@ -1,0 +1,23 @@
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  <%= breadcrumb('usuario.base') %>
+</div>
+
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+  <a class="nav-link collapsed menu-raiz" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTree">
+    <i class="fa fa-fw fa-file-text-o"></i>
+    <span><%= breadcrumb('usuario.avaliacoes.base') %></span>
+    <span class="fa arrow"></span>
+  </a>
+  <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <%= link_to tb_avaliacoes_path, class: 'collapse-item' do %>
+        <%= breadcrumb('usuario.avaliacoes.todas') %>
+      <% end %>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      <%= class_name.to_s.gsub('::', '/').downcase %>: '<%= plural_name %>'
+    attributes:
+      <%= class_name.to_s.gsub('::', '/').downcase %>:
+      <% attributes.each do |attribute| -%>
+        <%= attribute.name %>: '<%= attribute.name %>'
+      <% end %>
