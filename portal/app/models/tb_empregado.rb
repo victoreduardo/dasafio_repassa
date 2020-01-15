@@ -10,6 +10,8 @@ class TbEmpregado < ActiveRecord::Base
   attr_accessor :e_admin
   # relationships .............................................................
   belongs_to :tb_cargo
+  has_many :tb_avaliacaos, dependent: :delete_all, foreign_key: :tb_empregado_id
+  has_many :tb_avaliacaos_gerente, class_name: 'TbAvaliacao', dependent: :delete_all, foreign_key: :tb_empregado_gerente_id
   has_one :user, dependent: :delete
 
   # validations ...............................................................

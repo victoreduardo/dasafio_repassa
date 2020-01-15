@@ -8,8 +8,11 @@
 - WebService: Puma
 - Login: Devise
 - Search form: ransack
+- Ruby version: 2.5.3
+- Rails version: 5.2.1
+- Database: Postgresql 10 (database: postgres, user: postgres, password: '123')
 
-## For init, it's necessery execute:
+## It's necessery execute:
 - rake db:migrate
 - rake db:seed
 
@@ -38,8 +41,7 @@
 - Draper
 - Byebyg
 - Rspec
-- Capybara
-- Factory Girl
+- Factory Bot
 - Database Cleaner
 - Pronto
 - Rubocop
